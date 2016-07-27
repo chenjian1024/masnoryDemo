@@ -13,9 +13,13 @@
 		9C172CAE1D4871770046C3D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C172CAC1D4871770046C3D4 /* Main.storyboard */; };
 		9C172CB01D4871770046C3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C172CAF1D4871770046C3D4 /* Assets.xcassets */; };
 		9C172CB31D4871770046C3D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C172CB11D4871770046C3D4 /* LaunchScreen.storyboard */; };
+		E56732E257AA097157BCB72C /* libPods-masnoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 409E88128884CFAAD4DFBDDA /* libPods-masnoryDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F444F12663DBB703751EAAC /* Pods-masnoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-masnoryDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-masnoryDemo/Pods-masnoryDemo.release.xcconfig"; sourceTree = "<group>"; };
+		409E88128884CFAAD4DFBDDA /* libPods-masnoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-masnoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		731CEFDD0E28EC8F94F92FD2 /* Pods-masnoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-masnoryDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-masnoryDemo/Pods-masnoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9C172CA01D4871770046C3D4 /* masnoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = masnoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C172CA41D4871770046C3D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C172CA61D4871770046C3D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56732E257AA097157BCB72C /* libPods-masnoryDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A03A385B006CA7C45297A6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				409E88128884CFAAD4DFBDDA /* libPods-masnoryDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C172C971D4871770046C3D4 = {
 			isa = PBXGroup;
 			children = (
 				9C172CA21D4871770046C3D4 /* masnoryDemo */,
 				9C172CA11D4871770046C3D4 /* Products */,
+				F363BB2253FEF481E27A29D2 /* Pods */,
+				1A03A385B006CA7C45297A6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +94,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F363BB2253FEF481E27A29D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				731CEFDD0E28EC8F94F92FD2 /* Pods-masnoryDemo.debug.xcconfig */,
+				1F444F12663DBB703751EAAC /* Pods-masnoryDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C172CB71D4871770046C3D4 /* Build configuration list for PBXNativeTarget "masnoryDemo" */;
 			buildPhases = (
+				6E7E1095CC3321DC5C95606B /* [CP] Check Pods Manifest.lock */,
 				9C172C9C1D4871770046C3D4 /* Sources */,
 				9C172C9D1D4871770046C3D4 /* Frameworks */,
 				9C172C9E1D4871770046C3D4 /* Resources */,
+				847BFF074AAE0C47ADB253C7 /* [CP] Embed Pods Frameworks */,
+				FD00F1B494FF456307ADB4F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E7E1095CC3321DC5C95606B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		847BFF074AAE0C47ADB253C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-masnoryDemo/Pods-masnoryDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD00F1B494FF456307ADB4F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-masnoryDemo/Pods-masnoryDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C172C9C1D4871770046C3D4 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		9C172CB81D4871770046C3D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 731CEFDD0E28EC8F94F92FD2 /* Pods-masnoryDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = masnoryDemo/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		9C172CB91D4871770046C3D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F444F12663DBB703751EAAC /* Pods-masnoryDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = masnoryDemo/Info.plist;
@@ -300,6 +377,7 @@
 				9C172CB91D4871770046C3D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
